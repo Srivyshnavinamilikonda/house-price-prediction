@@ -2,6 +2,7 @@
 
 Predicting house sale prices on the Ames, Iowa dataset (Kaggle) using
 Linear, Ridge, and Lasso regression.
+**Live demo:** https://house-price-prediction-h4j6sqm7txnouhqckg76au.streamlit.app/
 
 ## Results
 
@@ -42,5 +43,14 @@ Python, pandas, NumPy, scikit-learn, Matplotlib, Seaborn, joblib
 3. Open `house_price.ipynb` and run all cells
 
 ## Limitations and future work
-- Linear models can't capture complex interactions
-- Next: try tree-based models (Random Forest, XGBoost), and add a Streamlit app
+
+- Linear models can't capture complex feature interactions
+- Imputation and outlier removal were done before the train/test split (a stricter version would fit them inside the pipeline)
+- The web app asks for 7 key features and fills the other 72 with typical values, so unusual combinations give less reliable estimates
+- Next: try Random Forest / XGBoost and compare results
+
+## Run the app locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
